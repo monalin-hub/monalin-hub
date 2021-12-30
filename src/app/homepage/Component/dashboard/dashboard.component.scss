@@ -1,0 +1,19 @@
+#addEmpbtn{
+    float: right;
+    margin-right: 20px;;
+}
+
+
+$ngx-datatableHeight: 30em; 
+
+:host ::ng-deep .datatable-body-cell {
+    padding-top: 2px  !important;  
+    text-align: center;
+}
+
+:host ::ng-deep .ngx-datatable .datatable-header-cell{ 
+  text-align: center;
+  font-weight: bold;
+  font-size: large;
+  color: black;
+}

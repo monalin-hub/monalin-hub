@@ -1,0 +1,53 @@
+import { Observable, of, throwError, BehaviorSubject } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import { ApiService } from './api.service';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class AuthService {
+
+
+  constructor(private router: Router, private apiService: ApiService ) { }
+
+  IsLoggedIn(){
+    return !!localStorage.getItem('token')
+  }
+
+  setToken(token: string): void {
+    localStorage.setItem('token', token);
+  }
+
+  //Checking session
+  getToken(): string | null {
+    return localStorage.getItem('token');
+  }
+
+  isLoggedIn() {
+    return this.getToken() !== null;
+  }
+
+  logout() {
+    localStorage.removeItem('token');
+    this.router.navigate(['login']);
+  }
+
+
+
+  login({ email, password }: any): Observable<any> {
+    
+    this.apiService.getEmployee().subscribe(res =>{
+      res = JSON.stringify(email) 
+    
+   console.log("in",res); 
+  
+   })
+    if (email === 'admin@gmail.com' && password === 'ad') {
+      this.setToken('abcdefghijklmnopqrstuvwxyz');
+     
+      return of({ name: 'Tarique Akhtar', email: 'admin@gmail.com' });
+    }
+    return throwError(new Error('Failed to login'));
+  }
+}

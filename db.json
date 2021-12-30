@@ -1,0 +1,81 @@
+{
+  "posts": [
+    {
+      "firstName": "Mona",
+      "lastName": "Bhambare",
+      "addr": "Yeola",
+      "mobile": "9503458615",
+      "city": "Yeola",
+      "id": 1,
+      "dob": "25/06/1993"
+    },
+    {
+      "firstName": "Ujjwala",
+      "lastName": "Bhambare",
+      "addr": "Yeola",
+      "mobile": "8787878787",
+      "city": "Nashik",
+      "id": 2,
+      "dob": "17/01/1964"
+    },
+    {
+      "firstName": "aaaa",
+      "lastName": "aaaa",
+      "addr": "aaaa",
+      "mobile": "6666666666",
+      "city": "Yeola",
+      "id": 3,
+      "dob": "23/08/1996"
+    },
+    {
+      "firstName": "qqqq",
+      "lastName": "sxa",
+      "addr": "aaaa",
+      "mobile": "6666666666",
+      "city": "dscs",
+      "id": 4,
+      "dob": "23/08/1996"
+    },
+    {
+      "firstName": "Monali",
+      "lastName": "Bhambare",
+      "addr": "fvsedc",
+      "mobile": "9999999999",
+      "city": "aaaaa",
+      "id": 6,
+      "dob": "2021-12-16"
+    }
+  ],
+  "SignupUsers": [
+    {
+      "email": "abbc@gmail.com",
+      "firstName": "wqs",
+      "lastName": "qqq",
+      "password": "qqq",
+      "addr": "qqq",
+      "dob": "25/09/2992",
+      "id": 2
+    },
+    {
+      "email": "monalia@gmail.com",
+      "firstName": "abc",
+      "lastName": "abc",
+      "password": "abc",
+      "addr": "abc",
+      "dob": "25/08/1992",
+      "id": 5
+    },
+    {
+      "email": "nachiket@gmail.com",
+      "firstName": "nachiket",
+      "lastName": "barttake",
+      "password": "aaa123$$",
+      "addr": "pune",
+      "dob": "1993-03-29",
+      "id": 6
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
