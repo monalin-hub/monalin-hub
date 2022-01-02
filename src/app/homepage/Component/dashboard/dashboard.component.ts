@@ -5,6 +5,7 @@ import { CommonService } from '../common.service';
 import { EmpModel } from './emp.model';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../Services/auth.service';
+import { HeaderComponent} from '../header/header.component';
 
 @Component({
   selector: 'app-dashboard',
