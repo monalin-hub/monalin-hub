@@ -1,0 +1,54 @@
+{
+  "EmployeeList": [
+    {
+      "firstName": "Mona",
+      "lastName": "Bhambare",
+      "addr": "Yeola",
+      "mobile": "8888888888",
+      "city": "Yeola",
+      "id": 1,
+      "dob": "1993-06-25"
+    },
+    {
+      "firstName": "Sona",
+      "lastName": "Bhambare",
+      "addr": "Nashik",
+      "dob": "2000-03-12",
+      "mobile": "7878787878",
+      "city": "Nashik",
+      "id": 2
+    },
+    {
+      "firstName": "Shilpa",
+      "lastName": "Waikar",
+      "addr": "Nashik",
+      "dob": "1988-03-26",
+      "mobile": "8787878787",
+      "city": "Nashik",
+      "id": 3
+    }
+  ],
+  "ManagerList": [
+    {
+      "email": "mona@gmail.com",
+      "firstName": "Monali",
+      "lastName": "Bhambare",
+      "password": "mona@123",
+      "addr": "Nashik",
+      "dob": "1993-06-25",
+      "id": 1
+    },
+    {
+      "email": "abc@gmail.com",
+      "firstName": "Shilpa",
+      "lastName": "Bhambare",
+      "password": "shilpa@123",
+      "addr": "Nashik",
+      "dob": "1988-03-26",
+      "id": 2
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

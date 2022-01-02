@@ -1,0 +1,118 @@
+<app-header></app-header>
+
+<br>
+<div class="container">
+  <div class="chart-wrapper">
+    <canvas baseChart 
+    [datasets]="barChartData"
+    [labels]="barChartLabels"
+    [options]="barChartOptions"
+    [plugins]="barChartPlugins"
+    [legend]="barChartLegend"   >
+  </canvas>
+  </div>
+ 
+  <button type="button" id="addEmpbtn" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal"
+    (click)="clickAddEmp()" >
+     <!-- <fa-icon [icon]="faUser" class="fa-1x"></fa-icon> -->
+      Add Employee </button><br><br><br>  
+</div>
+<br><br><hr>
+
+<h1> Employee List</h1>
+<ngx-datatable #table class="material striped" [rows]="empData" [columns]="columns" [headerHeight]="50"
+  [columnMode]="'force'" [footerHeight]="50" [rowHeight]="50" [summaryRow]="true" [summaryHeight]="5" [limit]="10">
+
+  <ngx-datatable-column name="ID" prop="id"></ngx-datatable-column>
+  <ngx-datatable-column name="First Name" prop="firstName"></ngx-datatable-column>
+  <ngx-datatable-column name="Last Name" prop="lastName"></ngx-datatable-column>
+  <ngx-datatable-column name="Address" prop="addr"></ngx-datatable-column>
+  <ngx-datatable-column name="Birth Date" prop="dob"></ngx-datatable-column>
+  <ngx-datatable-column name="Mobile Number" prop="mobile"></ngx-datatable-column>
+  <ngx-datatable-column name="City" prop="city"></ngx-datatable-column>
+
+  <ngx-datatable-column name="Actions" [width]="120" style="padding: 0.4rem ;">
+    <ng-template let-value="value" let-row="row" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+      <span>
+        <button class="btn tblActnBtn h-auto" data-bs-toggle="modal" title="Edit" data-bs-target="#exampleModal"
+          (click)='editEmp(row)'>
+          <i class="material-icons">mode_edit</i>
+        </button>
+        <button class="btn tblActnBtn h-auto" title="Delete" (click)='deleteEmp(row)'>
+          <i class="material-icons">delete</i>
+        </button>       
+      </span>
+    </ng-template>
+  </ngx-datatable-column>
+</ngx-datatable>
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Employee Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formValue" (ngSubmit)="onSubmit()">
+          <div class="form-row">
+            <div class="col-xl-6 col-lg-4 col-md-12 col-sm-12 mb-2">
+              <mat-form-field class="col-xl" appearance="outline">
+                <mat-label>First Name</mat-label>
+                <input matInput formControlName="firstName" required>
+                <mat-error *ngIf="formValue.get('firstName')">First Name is Required</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col-xl-6 col-lg-4 col-md-12 col-sm-12 mb-2">
+              <mat-form-field class="col-xl" appearance="outline">
+                <mat-label>Last Name</mat-label>
+                <input matInput formControlName="lastName" required>
+                <mat-error *ngIf="formValue.get('lastName')">Last Name is Required</mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col-xl-6 col-lg-4 col-md-12 col-sm-12 mb-2">
+              <mat-form-field class="col-xl" appearance="outline">
+                <mat-label>Address</mat-label>
+                <input matInput formControlName="addr" required>
+                <mat-error *ngIf="formValue.get('addr')">Address is Required</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col-xl-6 col-lg-4 col-md-12 col-sm-12 mb-2">
+              <mat-form-field class="col-xl" appearance="outline">
+                <mat-label>Birth Date</mat-label>
+                <input matInput type="date" formControlName="dob" required>
+                <mat-error *ngIf="formValue.get('dob')">Birth Date is Required</mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col-xl-6 col-lg-4 col-md-12 col-sm-12 mb-2">
+              <mat-form-field class="col-xl" appearance="outline">
+                <mat-label>Mobile Number</mat-label>
+                <input matInput formControlName="mobile" required>
+                <mat-error *ngIf="formValue.get('mobile')">Mobile Number is Required</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col-xl-6 col-lg-4 col-md-12 col-sm-12 mb-2">
+              <mat-form-field class="col-xl" appearance="outline">
+                <mat-label>City</mat-label>
+                <input matInput formControlName="city" required>
+                <mat-error *ngIf="formValue.get('city')">City is Required</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class=" text-center">
+            <button class="btn btn-primary mr-1" [disabled]="!formValue.valid">{{btnValue}}</button>
+            <button class="btn btn-secondary " type="button" data-bs-dismiss="modal" id="cancel">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
